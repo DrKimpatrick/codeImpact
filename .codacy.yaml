@@ -1,0 +1,4 @@
+exclude_paths:
+  - "*.md"
+  - "./src/__tests__/**"
+  - "./src/__mocks__/**"
