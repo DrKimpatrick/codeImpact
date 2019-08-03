@@ -5,7 +5,7 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-          <h1>Welcome to CodeImpact</h1>
+          <h1>Welcome to CodeImpact yes</h1>
           <h3>{siteTitle}</h3>
     </div>
   </header>
