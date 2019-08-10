@@ -1,0 +1,12 @@
+.humburger {
+  height: 30px;
+  width: 30px;
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+  span {
+    width: 100%;
+    background: #02b3e4;
+    height: 4px;
+  }
+}

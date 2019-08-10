@@ -1,0 +1,84 @@
+.Header {
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding: 25px 0;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: grid;
+  grid-template-columns: 40% auto;
+  box-shadow: 30px 1px 20px rgba(0, 0, 0, 0.08);
+
+  a {
+    color: #2d354c;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  button {
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #02b3e4;
+    border-radius: 3px;
+    color: white;
+    width: 127px;
+    height: 47px;
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}
+
+.HeaderGroup {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  align-items: center;
+  justify-items: center;
+  width: 80%;
+  margin: 0 18% 0 2%;
+}
+
+.Header button:hover {
+  background-color: rgba(255, 255, 255, 0.815);
+  color: #02b3e4;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+#imageWrapper {
+  width: 150px;
+  margin: 0 auto;
+}
+
+#logo {
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+#humburgerIcon {
+  display: none;
+}
+
+/*
+    View port --> iPad pro
+*/
+@media (max-width: 1024px) {
+  .HeaderGroup {
+    display: none;
+  }
+  #imageWrapper {
+    margin-left: 10%;
+  }
+  #humburgerIcon {
+    display: inline-block;
+    padding-left: 20px;
+    margin: auto 0;
+    cursor: pointer;
+    outline: none;
+  }
+}
