@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import CallToAction from './callToAction';
+import Testimonials from './testimonials/layout'
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -25,10 +26,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className='layoutWrapper'>
       <Header siteTitle={data.site.siteMetadata.title} />
       <CallToAction/>
-    </>
+      <Testimonials/>
+    </div>
   )
 }
 
