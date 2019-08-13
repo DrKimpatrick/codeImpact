@@ -1,0 +1,52 @@
+.actionWrapper {
+  position: absolute;
+  top: 200px;
+  height: 300px;
+  background-image: url("../images/call2action.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: grid;
+
+  .innerWrapper {
+    display: grid;
+    margin: auto;
+    grid-gap: 20px;
+
+    h2 {
+      font-size: 30px;
+      color: #eaf3ff;
+      font-weight: 200;
+      margin: auto;
+    }
+
+    p {
+      color: #eaf3ff;
+      font-size: 18px;
+      margin: auto;
+      font-weight: 50;
+    }
+
+    button {
+      padding: 5px 20px;
+      font-size: 16px;
+      font-weight: lighter;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 3px;
+      color: #02b3e4;
+      height: 47px;
+      margin: auto;
+    }
+
+    @media (max-width: 1024px) {
+      p {
+        text-align: center;
+        margin: 0 5%;
+      }
+    }
+  }
+}
