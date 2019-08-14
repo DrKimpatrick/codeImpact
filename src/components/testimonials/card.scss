@@ -27,7 +27,7 @@
       top: -30px;
     }
 
-    h2 {
+    .h2-card-upper {
       font-family: Roboto;
       font-style: normal;
       font-weight: 300;
@@ -36,7 +36,7 @@
       text-align: center;
     }
 
-    p {
+    .paragraphly {
       font-family: Roboto;
       font-style: normal;
       font-weight: 300;
@@ -51,7 +51,7 @@
     background: #f7f7f8;
     display: grid;
 
-    h2 {
+    .h2-card-lower {
       color: #141313;
       font-weight: 300;
       font-size: 14px;
@@ -59,7 +59,7 @@
       margin: auto;
     }
 
-    h3 {
+    .h3-card-lower {
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
@@ -71,10 +71,14 @@
   }
 }
 
-.one {
+.green-border-card {
   border-top: 3px solid #02ccba;
 }
 
-.three {
+.purple-border-card {
   border-top: 3px solid #a951ed;
+}
+
+.blue-border-card {
+  border-top: 3px solid #02b3e4;
 }
