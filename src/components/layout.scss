@@ -7,3 +7,9 @@ body {
   background-color: #ffffff;
   margin: 0;
 }
+
+.layoutWrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 70px;
+}

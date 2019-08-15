@@ -1,0 +1,28 @@
+.testimonialsWrapper {
+  display: grid;
+  grid-template-columns: 22% 22% 22%;
+  background: #f3f8ff;
+  height: 548px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .testimonialsWrapper {
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialsWrapper {
+    height: 1300px;
+    grid-template-columns: repeat(1, 50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonialsWrapper {
+    height: 1300px;
+    grid-template-columns: repeat(1, 80%);
+  }
+}
