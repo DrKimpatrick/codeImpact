@@ -1,0 +1,101 @@
+.letter-wrapper {
+  height: 202px;
+  background: #1e2334;
+  display: grid;
+  grid-template-columns: 40% 20%;
+  padding: 0 10%;
+  justify-content: space-around;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 55% 25%;
+    padding: 0 5%;
+  }
+}
+
+.left-letter-div {
+  display: grid;
+  align-content: center;
+
+  .accept-parent {
+    color: rgba(255, 255, 255, 0.83);
+    margin-left: 10px;
+
+    .blue-accept {
+      color: #14abf4;
+      cursor: pointer;
+    }
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(255, 255, 255, 0.83);
+
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+
+  .email-input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #aaaaaa;
+    border-bottom: 1px solid #c4c4c4;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      font-size: 16px;
+    }
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.right-letter-div {
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 40%;
+    width: 190px;
+    border-radius: 4px;
+    border: 1px solid #14abf4;
+    height: 73px;
+    font-size: 20px;
+    color: #14abf4;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+      width: auto;
+      height: 40px;
+      font-size: 15px;
+      align-self: center;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}
