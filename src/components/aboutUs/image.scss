@@ -1,0 +1,13 @@
+.image-container {
+  width: 100%;
+  background-image: url("../../images/about.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 351px;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

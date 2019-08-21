@@ -13,3 +13,37 @@ body {
   grid-template-rows: auto;
   grid-gap: 70px;
 }
+
+.h2-style {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  color: #706262;
+  text-align: center;
+}
+
+.blue-button {
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #02b3e4;
+  border-radius: 3px;
+  color: white;
+  width: 127px;
+  height: 47px;
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.paragraphly {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 16px;
+  text-align: center;
+  color: #444040;
+}
