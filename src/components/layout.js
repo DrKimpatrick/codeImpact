@@ -15,6 +15,7 @@ import Testimonials from './testimonials/layout'
 import NewsLetter from './newsletter';
 import "./layout.scss"
 import AboutUs from './aboutUs/about';
+import Tutorial from './tutorial';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
     <div className='layoutWrapper'>
       <Header siteTitle={data.site.siteMetadata.title} />
       <AboutUs/>
+      <Tutorial/>
       <CallToAction/>
       <Testimonials/>
       <NewsLetter/>
