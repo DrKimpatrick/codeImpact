@@ -1,6 +1,7 @@
 .hero-heading-wrapper {
   height: 152px;
   width: 632px;
+<<<<<<< HEAD
   background: #eeeaea;
   opacity: 0.5;
   display: grid;
@@ -16,3 +17,24 @@
     }
   }
 }
+=======
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0.6;
+  display: grid;
+  font-size: 25px;
+  color: white;
+  // margin: 40% auto;
+  position: absolute;
+  // margin: auto;
+  top: 40%;
+  left: 30%;
+
+  h2 {
+    text-align: center;
+    color: white;
+    span {
+      color: #1cc3f1;
+    }
+  }
+}
+>>>>>>> create hero section
