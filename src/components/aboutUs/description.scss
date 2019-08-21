@@ -1,0 +1,45 @@
+.description-wrapper {
+  height: 100%;
+  width: 90%;
+  padding: 0 5%;
+  display: grid;
+  grid-template-rows: 20% 50% 30%;
+  border: 1px solid #14abf4;
+
+  @media (max-width: 768px) {
+    border: none;
+    grid-template-rows: 20% 60% 20%;
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+    justify-self: baseline;
+    padding-top: 15%;
+    color: #2d354c;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    margin: auto;
+  }
+
+  button {
+    width: auto;
+    margin: auto;
+  }
+}

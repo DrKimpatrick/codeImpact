@@ -4,7 +4,7 @@ import './card.scss';
 const Card = ({name, image, company, color, testimonial}) => (
     <div className={`card ${color}`}>
         <div className='upperSection'>
-            <h2 className='h2-card-upper'>{name}</h2>
+            <h2 className='h2-style'>{name}</h2>
             <p className='paragraphly'>{testimonial}</p>
             <img src={image}/>
         </div>
