@@ -6,7 +6,7 @@
   grid-template-rows: 20% 50% 30%;
   border: 1px solid #14abf4;
 
-  @media (max-width: 678px) {
+  @media (max-width: 768px) {
     border: none;
     grid-template-rows: 20% 60% 20%;
 

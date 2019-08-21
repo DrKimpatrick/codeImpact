@@ -15,7 +15,19 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     width: 90%;
-    height: 650px;
+    height: 500px;
     padding: 0 5%;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+    height: 500px;
+    padding: 0 5%;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+    height: 600px;
   }
 }
