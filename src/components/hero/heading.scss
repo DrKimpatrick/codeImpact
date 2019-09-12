@@ -1,0 +1,18 @@
+.hero-heading-wrapper {
+  height: 152px;
+  width: 632px;
+  background: #eeeaea;
+  opacity: 0.5;
+  display: grid;
+
+  font-size: 25px;
+  color: #c4c4c4;
+  margin: auto;
+
+  h2 {
+    // margin: auto;
+    span {
+      color: #14abf4;
+    }
+  }
+}
