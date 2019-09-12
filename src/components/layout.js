@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
       <CallToAction/>
       <Testimonials/>
       <NewsLetter/>
-      <Footer/>
+      <Footer/> 
     </div>
   )
 }

@@ -37,7 +37,7 @@ const Footer = () => (
 
         <div className='footer-bottom-section'>
             <img src={logo} id='footer-logo' alt='company logo'/>
-            <span>Copyright @ 2019 CodeImpact. All rights reserved</span>
+            <span>Copyright © {new Date().getFullYear()}  CodeImpact. All rights reserved</span>
         </div>
     </div>
 );
