@@ -23,9 +23,7 @@
   display: grid;
   font-size: 25px;
   color: white;
-  // margin: 40% auto;
   position: absolute;
-  // margin: auto;
   top: 40%;
   left: 30%;
 
@@ -35,6 +33,34 @@
     span {
       color: #1cc3f1;
     }
+  }
+
+  @media (max-width: 3000px) {
+    top: 30%;
+    left: 30%;
+  }
+
+  @media (max-width: 1024px) {
+    top: 22%;
+    width: 400px;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    left: 10%;
+    top: 30%;
+
+    h2 {
+      margin: auto;
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    top: 40%;
+    height: 200px;
+    font-size: 20px;
   }
 }
 >>>>>>> create hero section
