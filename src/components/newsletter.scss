@@ -5,6 +5,7 @@
   grid-template-columns: 40% 20%;
   padding: 0 10%;
   justify-content: space-around;
+  margin-bottom: -70px; // Remove grid gap
 
   @media (max-width: 1024px) {
     grid-template-columns: 55% 25%;

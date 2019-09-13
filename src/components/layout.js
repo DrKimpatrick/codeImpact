@@ -16,6 +16,7 @@ import NewsLetter from './newsletter';
 import "./layout.scss"
 import AboutUs from './aboutUs/about';
 import Tutorial from './tutorial';
+import Footer from './footer/footer';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
       <CallToAction/>
       <Testimonials/>
       <NewsLetter/>
+      <Footer/> 
     </div>
   )
 }
