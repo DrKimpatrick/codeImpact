@@ -1,23 +1,6 @@
 .hero-heading-wrapper {
   height: 152px;
   width: 632px;
-<<<<<<< HEAD
-  background: #eeeaea;
-  opacity: 0.5;
-  display: grid;
-
-  font-size: 25px;
-  color: #c4c4c4;
-  margin: auto;
-
-  h2 {
-    // margin: auto;
-    span {
-      color: #14abf4;
-    }
-  }
-}
-=======
   background: rgba(0, 0, 0, 0.6);
   opacity: 0.6;
   display: grid;
@@ -35,14 +18,15 @@
     }
   }
 
-  @media (max-width: 3000px) {
-    top: 30%;
-    left: 30%;
-  }
-
   @media (max-width: 1024px) {
-    top: 22%;
-    width: 400px;
+    width: 60%;
+    left: 20%;
+    top: 35%;
+
+    h2 {
+      margin: auto;
+      font-size: 30px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -63,4 +47,3 @@
     font-size: 20px;
   }
 }
->>>>>>> create hero section
