@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import CallToAction from './callToAction';
 import Testimonials from './testimonials/layout'
@@ -19,6 +18,7 @@ import Tutorial from './tutorial';
 import Tutorials from './tutorials/layout';
 import Footer from './footer/footer';
 import Hero from './hero/hero';
+import Gallery from './gallery/gallery';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Layout = ({ children }) => {
@@ -37,7 +37,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Hero/>
       <AboutUs/>
-      <Tutorials/>
+      <Gallery/>
+      {/* <Tutorials/> */}
       <CallToAction/>
       <Testimonials/>
       <NewsLetter/>

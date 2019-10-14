@@ -18,19 +18,19 @@ const Caption = () => (
     </div>
 )
 const BottomTuts1 = () => (
-    <div className='col-sm-12'>
+    <div className='col-sm-12 tut-wrapper'>
         <div className='row '>
-            <div className='col-md-4 '><Tutorial/><Caption/></div>
-            <div className='col-md-4 '><Tutorial/><Caption/></div>
-            <div className='col-md-4 '><Tutorial/><Caption/></div>
+            <div className='col-md-4'><Tutorial/><Caption/></div>
+            <div className='col-md-4'><Tutorial/><Caption/></div>
+            <div className='col-md-4'><Tutorial/><Caption/></div>
         </div>
     </div>
 );
 
 const BottomTuts2 = () => (
-    <div className='col-sm-12'>
+    <div className='col-sm-12 tut-wrapper'>
         <div className='row'>
-            <div className='col-md-4'>
+            <div className='col-md-4 btm-margin'>
                 <Tutorial/>
                 <Caption/>
             </div>

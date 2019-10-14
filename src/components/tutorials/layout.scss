@@ -17,11 +17,21 @@
     #top-tutorial {
       height: 100%;
     }
-}
 
-@media (max-width: 768px) {
-  height: 2000px;
-}
+    @media (max-width: 768px) {
+      height: 2000px;
+    }
+  }
+
+  // @media (max-width: 768px) {
+  //   .top-wrapper {
+  //     height: 2000px;
+  //   }
+
+  //   .btm-margin {
+  //     margin-bottom: 20px;
+  //   }
+  // }
 
   .bottom-section {
     height: 60%;
@@ -53,6 +63,7 @@
 
 .nav-row {
   border-bottom: 2px solid #3b4257;
+  // background-color: #f7f7f8;
 }
 
 .active {
@@ -71,21 +82,3 @@
   margin: 0;
   padding-left: 10px;
 }
-// @media (max-width: 1024px) {
-//   .testimonialsWrapper {
-//     grid-template-columns: 30% 30% 30%;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .testimonialsWrapper {
-//     height: 1300px;
-//     grid-template-columns: repeat(1, 50%);
-//   }
-// }
-
-// @media (max-width: 600px) {
-//   .testimonialsWrapper {
-//     height: 1300px;
-//     grid-template-columns: repeat(1, 80%);
-//   }
