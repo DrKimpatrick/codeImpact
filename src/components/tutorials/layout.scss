@@ -1,0 +1,83 @@
+#top-iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#bottom-iframe {
+  height: 100%;
+}
+
+.top-wrapper {
+  height: 600px;
+
+  @media (max-width: 1024px) {
+    height: 1000px;
+  }
+  .top-tutorial {
+    height: 40%;
+
+    #top-tutorial {
+      height: 100%;
+    }
+  }
+
+  .bottom-section {
+    height: 60%;
+
+    .nav-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding: 25px 0;
+      .nav-item {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.top-tutorial {
+  width: 100%;
+}
+
+.header {
+  font-size: 25px;
+  color: #3b4257;
+  padding: 25px;
+}
+
+.nav-section-left {
+  margin: 0;
+}
+
+.nav-row {
+  border-bottom: 2px solid #3b4257;
+}
+
+.active {
+  color: #c4170b;
+  font-style: bold;
+}
+
+.tut-div {
+  border: none;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+// @media (max-width: 1024px) {
+//   .testimonialsWrapper {
+//     grid-template-columns: 30% 30% 30%;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .testimonialsWrapper {
+//     height: 1300px;
+//     grid-template-columns: repeat(1, 50%);
+//   }
+// }
+
+// @media (max-width: 600px) {
+//   .testimonialsWrapper {
+//     height: 1300px;
+//     grid-template-columns: repeat(1, 80%);
+//   }

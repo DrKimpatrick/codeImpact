@@ -16,8 +16,10 @@ import NewsLetter from './newsletter';
 import "./layout.scss"
 import AboutUs from './aboutUs/about';
 import Tutorial from './tutorial';
+import Tutorials from './tutorials/layout';
 import Footer from './footer/footer';
 import Hero from './hero/hero';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,7 +37,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Hero/>
       <AboutUs/>
-      <Tutorial/>
+      <Tutorials/>
       <CallToAction/>
       <Testimonials/>
       <NewsLetter/>
