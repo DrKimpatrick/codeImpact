@@ -2,21 +2,27 @@ import React from 'react';
 import './layout.scss'; 
 
 const TopTutorial = () => (
-        <iframe  id='top-iframe' src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" >
+        <iframe  id='top-iframe' frameBorder="0" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" >
         </iframe>
 )
 
 const Tutorial = () => (
-    <iframe id='bottom-iframe' src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" >
+    <iframe id='bottom-iframe' frameBorder="0" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" >
     </iframe>
 )
 
+const Caption = () => (
+    <div className='caption'>
+        <h3>Title</h3>
+        <p>Description..............</p>
+    </div>
+)
 const BottomTuts1 = () => (
     <div className='col-sm-12'>
-        <div className='row'>
-            <div className='col-md-4 '><Tutorial/></div>
-            <div className='col-md-4 '><Tutorial/></div>
-            <div className='col-md-4 '><Tutorial/></div>
+        <div className='row '>
+            <div className='col-md-4 '><Tutorial/><Caption/></div>
+            <div className='col-md-4 '><Tutorial/><Caption/></div>
+            <div className='col-md-4 '><Tutorial/><Caption/></div>
         </div>
     </div>
 );
@@ -24,10 +30,11 @@ const BottomTuts1 = () => (
 const BottomTuts2 = () => (
     <div className='col-sm-12'>
         <div className='row'>
-            <div className='col-sm-offset-0 col-sm-8 col-lg-4'>
+            <div className='col-md-4'>
                 <Tutorial/>
-                <div>Kimanje</div>
+                <Caption/>
             </div>
+            
         </div>
     </div>
 );
@@ -48,7 +55,7 @@ class TutorialLayout extends React.Component {
         <div className='row no-gutters top-tutorial'>
             <div className='col-md-12' id='top-tutorial'><TopTutorial/></div>
         </div>
-        <div className='row bottom-section'>
+        <div className='row no-gutters bottom-section'>
             <div className='col-sm-12'>
                 <div className='row  nav-row'>
                     <div className='col-md-6 header'>Trending Tutorials</div>
