@@ -17,6 +17,7 @@ import "./layout.scss"
 import AboutUs from './aboutUs/about';
 import Tutorial from './tutorial';
 import Footer from './footer/footer';
+import Hero from './hero/hero';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,6 +33,7 @@ const Layout = ({ children }) => {
   return (
     <div className='layoutWrapper'>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <Hero/>
       <AboutUs/>
       <Tutorial/>
       <CallToAction/>

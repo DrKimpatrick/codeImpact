@@ -1,0 +1,61 @@
+.notes-wrapper {
+  height: 500px;
+  background-image: url("../../images/call2action.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  position: absolute;
+  margin-top: 20px;
+  left: 3%;
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr;
+  justify-content: center;
+  align-content: center;
+  border-radius: 4px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  h2 {
+    font-size: 30px;
+    color: #d4cece;
+    text-align: center;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(7, 6, 6, 0.274);
+  }
+
+  p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: whitesmoke;
+  }
+  button {
+    margin: 0 auto;
+    width: 190px;
+    border-radius: 4px;
+    border: 1px solid white;
+    height: 73px;
+    font-size: 20px;
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+      width: auto;
+      height: 40px;
+      font-size: 15px;
+      align-self: center;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}

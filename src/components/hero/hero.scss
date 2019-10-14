@@ -1,14 +1,14 @@
-.image-container {
-  width: 100%;
+.hero-container {
+  // margin-top: 100px;
+  height: 548px;
   background-image: url("../../images/about.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); // Darker layer
-  height: 351px;
-  margin: auto;
+  margin-top: -70px;
 
   @media (max-width: 768px) {
-    display: none;
+    margin-bottom: -70px;
   }
 }
