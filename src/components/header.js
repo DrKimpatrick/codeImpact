@@ -30,7 +30,7 @@ class Header extends React.Component {
     return(
       <div className={this.state.hasScroll ? 'Header HeaderHasScroll': 'Header'}>
           <div id='humburgerIcon'><Humburger/></div>
-          <div id='imageWrapper'><img src={logo} id='logo' alt='company logo'/></div>
+          <div id='imageWrapper'><img src="https://lh3.googleusercontent.com/aMc_fBs-tkqQQXPZwIum8oM-DMTt8du-G1OxQsarxmgD1tc3OrPBMZvJJMysh8C8bVNITU9AQgfQLsqr7e7E4tkrZQJvVbeReJJ6BZ27B_tBXi_SCzgtaDzwHuFVW64vyfAtfmJ8dw=w2400" id='logo' alt='company logo'/></div>
           <div className='HeaderGroup'>
             <Link to='/home'>HOME</Link>
             <Link to='/about'>ABOUT US</Link>
