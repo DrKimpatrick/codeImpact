@@ -1,0 +1,14 @@
+.image-container {
+  width: 100%;
+  background-image: url("https://source.unsplash.com/IgUR1iX0mqM");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); // Darker layer
+  height: 351px;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
