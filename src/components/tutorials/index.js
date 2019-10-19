@@ -1,45 +1,36 @@
 import React from 'react';
 import './index.scss';
 
+const New = () => (
+    <div className="col-lg-3 col-md-4 col-6 height">
+        <div className="d-block mb-4 h-100 hovereffect">
+            <img className="img-fluid" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt=""/>
+            <div className="overlay">
+                <h2>Data structures</h2>
+                <p>Learn and master JavaScript programming in 10 days</p>
+                <a class="info" href="#">Play</a>
+            </div>
+        </div>
+    </div>
+)
+
 const TutPeriodOne = () => (
     <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt=""/>
-            </span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt=""/>
-            </span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt=""/>
-            </span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt=""/>
-            </span>
-        </div>
+        <New/>
+        <New/>
+        <New/>
+        <New/>
+        <New/>
     </div>
 )
 
 const TutPeriodTwo = () => (
     <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt=""/>
-            </span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-            <span class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt=""/>
-            </span>
-        </div>
+        <New/>
+        <New/>
     </div>
 )
+
 
 class TutorialSection extends React.Component {
     state = {
