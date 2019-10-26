@@ -16,7 +16,7 @@ const AboutUs = () => (
                         graduate with real-life work experience already on their resumes, 
                         a dedicated team to help land their first job, and a close community of 
                         peers and instructors supporting them along the way.</p>
-                    <button className='btn btn-default new-blue-button'>READ MORE</button>
+                    <button className='btn new-blue-button'>READ MORE</button>
                 </div>
             </div>
         </div>

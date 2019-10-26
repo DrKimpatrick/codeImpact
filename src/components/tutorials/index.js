@@ -2,9 +2,9 @@ import React from 'react';
 import './index.scss';
 
 const New = () => (
-    <div className="col-lg-3 col-md-4 col-6 height">
+    <div className="col-lg-3 col-md-4 col-12 height">
         <div className="d-block mb-4 h-100 hovereffect">
-            <img className="img-fluid" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt=""/>
+            <img className='img'/>
             <div className="overlay">
                 <h2>Data structures</h2>
                 <p>Learn and master JavaScript programming in 10 days</p>

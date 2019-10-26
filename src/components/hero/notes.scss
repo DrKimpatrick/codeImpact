@@ -5,18 +5,18 @@
   background-position: center;
   background-size: cover;
   width: 300px;
-  position: absolute;
+  // position: absolute;
   margin-top: 20px;
-  left: 3%;
+  // left: 3%;
   display: grid;
   grid-template-rows: 1fr 2fr 4fr;
   justify-content: center;
   align-content: center;
   border-radius: 4px;
 
-  @media (max-width: 1024px) {
-    display: none;
-  }
+  // @media (max-width: 1024px) {
+  //   display: none;
+  // }
 
   h2 {
     font-size: 30px;
@@ -47,15 +47,15 @@
     background-repeat: no-repeat;
     cursor: pointer;
 
-    @media (max-width: 1024px) {
-      width: auto;
-      height: 40px;
-      font-size: 15px;
-      align-self: center;
-    }
+    // @media (max-width: 1024px) {
+    //   width: auto;
+    //   height: 40px;
+    //   font-size: 15px;
+    //   align-self: center;
+    // }
 
-    @media (max-width: 768px) {
-      font-size: 10px;
-    }
+    // @media (max-width: 768px) {
+    //   font-size: 10px;
+    // }
   }
 }

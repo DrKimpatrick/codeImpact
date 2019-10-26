@@ -6,9 +6,9 @@
   display: grid;
   font-size: 25px;
   color: white;
-  position: absolute;
-  top: 40%;
-  left: 30%;
+  // position: absolute;
+  // top: 40%;
+  // left: 30%;
 
   h2 {
     text-align: center;
@@ -18,32 +18,25 @@
     }
   }
 
-  @media (max-width: 1024px) {
-    width: 60%;
-    left: 20%;
-    top: 35%;
+  // @media (max-width: 1024px) {
+  //   width: 60%;
+  //   left: 20%;
+  //   top: 20%;
 
-    h2 {
-      margin: auto;
-      font-size: 30px;
-    }
-  }
+  //   h2 {
+  //     margin: auto;
+  //     font-size: 30px;
+  //   }
+  // }
 
-  @media (max-width: 768px) {
-    width: 80%;
-    left: 10%;
-    top: 30%;
+  // @media (max-width: 768px) {
+  //   width: 80%;
+  //   left: 10%;
+  //   top: 30%;
 
-    h2 {
-      margin: auto;
-      font-size: 25px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    font-size: 20px;
-    top: 40%;
-    height: 200px;
-    font-size: 20px;
-  }
+  //   h2 {
+  //     margin: auto;
+  //     font-size: 25px;
+  //   }
+  // }
 }

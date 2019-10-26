@@ -62,10 +62,6 @@ button {
   cursor: pointer;
 }
 
-.height {
-  height: 100%;
-}
-
 .hovereffect {
   width: 100%;
   height: 100%;
@@ -128,7 +124,7 @@ button {
   -ms-transform: translateY(45px);
   transform: translateY(45px);
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  transition: all 0.4 s cubic-bezier(0.88, -0.99, 0, 1.81);
 }
 
 .hovereffect:hover p {
@@ -165,4 +161,18 @@ button {
 
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff;
+}
+.height {
+  height: 100%;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://source.unsplash.com/G9Rfc1qccH4/400x300");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); // Darker layer
+  height: 200px;
+  margin: auto;
 }
