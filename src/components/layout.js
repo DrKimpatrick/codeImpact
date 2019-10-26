@@ -13,9 +13,7 @@ import CallToAction from './callToAction';
 import Testimonials from './testimonials/layout'
 import NewsLetter from './newsletter';
 import "./layout.scss"
-import AboutUs from './aboutUs/about';
-// import Tutorial from './tutorial';
-// import Tutorials from './tutorials/layout';
+import About from './aboutUs/index';
 import TutorialSection from './tutorials/index';
 import Footer from './footer/footer';
 import Hero from './hero/hero';
@@ -37,11 +35,10 @@ const Layout = ({ children }) => {
     <div className='layoutWrapper'>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Hero/>
-      <AboutUs/>
+      <About/>
       <Gallery/>
       <CallToAction/>
       <Testimonials/>
-      {/* <Tutorials/> */}
       <TutorialSection/>
       <NewsLetter/>
       <Footer/> 
