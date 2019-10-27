@@ -3,7 +3,7 @@ import './gallery';
 
 const Gallery = () => (
     // <!-- Page Content -->
-<div class="container">
+<div class="container" id='gallery'>
 
     <h1 class="font-weight-light text-center mt-4 mb-0">CodeImpact Moments</h1>
 

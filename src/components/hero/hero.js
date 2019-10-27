@@ -2,7 +2,7 @@ import React from 'react';
 import './hero.scss';
 
 const Hero = () => (
-    <div className='container-fluid hero-container'>
+    <div className='container-fluid hero-container' id='home'>
         <div className='row'>
             <div className='col-lg-4 col-md-5 col-12 img-col d-none d-lg-flex v'>
                 <div className='notes-wrapper'>

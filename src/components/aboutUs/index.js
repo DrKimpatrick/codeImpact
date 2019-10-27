@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 const AboutUs = () => (
-    <div className='container about-us-container'>
+    <div className='container about-us-container' id='about-us'>
         <div className='row text-center text-lg-left d-flex align-items-center row-style'>
             <div className='col-lg-7 col-md-5 col-12 align-items-center img-col d-none d-md-flex'>
                 <div className='d-block mb-4 h-70 image-container'></div>

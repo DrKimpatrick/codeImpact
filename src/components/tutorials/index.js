@@ -42,7 +42,7 @@ class TutorialSection extends React.Component {
     }
     render(){
         return(
-            <div className='container'>
+            <div className='container' id='tutorials'>
                 <div className='row text-center text-lg-left top-section d-flex align-items-center'>
                     <div className='col-lg-6 col-md-6 col-12 tut-wording'><span id='top-tut-header'>Getting started with JavaScript</span><br/><span id='top-tut-p'>Learn and master JavaScript programming in 10 days</span></div>
                     {/* <div className='col-lg-6 col-md-6 col-12 '><button>SEE OUR PROGRAMS</button></div> */}
