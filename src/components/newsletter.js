@@ -14,7 +14,8 @@ class NewsLetter extends React.Component {
     state = {
         email: '',
         isChecked: true,
-        error: ''
+        error: '',
+        loading: false,
     }
     componentDidMount() {
         // Initialize the App Client
@@ -32,6 +33,7 @@ class NewsLetter extends React.Component {
 
       addSubscriber = (event) => {
         event.preventDefault();
+
         const { email, isChecked } = this.state;
         if(!email){
           this.setState({ error: "Please provide your email" });
@@ -41,6 +43,7 @@ class NewsLetter extends React.Component {
           this.setState({ error: "Please check the box to agree to the terms & conditions" });
           return;
         }
+        this.setState({ loading: true });
         // insert the subscriber into the remote Stitch DB
         this.db
           .collection("subscribers")
@@ -48,6 +51,7 @@ class NewsLetter extends React.Component {
             email
           })
           .then(() => {
+            this.setState({ loading: false });
             this.notify();
             this.setState({ email: '', error: '' });
           })
@@ -80,6 +84,7 @@ class NewsLetter extends React.Component {
                         <input type='checkbox' className='checkbox-accept' checked={this.state.isChecked} onChange={this.toggleChange}/><span className='accept-parent'>I accept  the <span className='blue-accept'>Privacy Policy</span> and  the <span className='blue-accept'>Terms of use</span></span><br/>
                     </form>
                     <span id='error'>{this.state.error}</span>
+                    <div className={this.state.loading ? 'loader': 'hide-loader'} ></div>
                 </div>
                 <div className='right-letter-div'>
                     <button type='submit' form="subscriber">Get Updates</button>
