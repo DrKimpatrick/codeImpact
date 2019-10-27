@@ -1,10 +1,15 @@
 import React from 'react';
 import './newsletter.scss';
+import { toast } from 'react-toastify';
 import {
     Stitch,
     RemoteMongoClient
   } from "mongodb-stitch-browser-sdk";
 
+toast.configure({
+  autoClose: 9000,
+  draggable: false,
+})
 class NewsLetter extends React.Component {
     state = {
         email: '',
@@ -23,6 +28,7 @@ class NewsLetter extends React.Component {
         // Get a reference to the todo database
         this.db = mongodb.db("codeimpact");
       }
+      notify = () => toast.success("You have sucessfully subscribed to codeimpact newsletter");
 
       addSubscriber = (event) => {
         event.preventDefault();
@@ -41,7 +47,10 @@ class NewsLetter extends React.Component {
           .insertOne({
             email
           })
-          .then(this.setState({ email: '', error: '' }))
+          .then(() => {
+            this.notify();
+            this.setState({ email: '', error: '' });
+          })
           .catch(console.error);
       }
 
