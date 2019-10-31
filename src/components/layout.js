@@ -19,31 +19,26 @@ import Footer from './footer/footer';
 import Hero from './hero/hero';
 import Gallery from './gallery/gallery';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+class Layout extends React.Component {
+  
 
-  return (
-    <div className='layoutWrapper'>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Hero/>
-      <About/>
-      <Gallery/>
-      <CallToAction/>
-      <Testimonials/>
-      <TutorialSection/>
-      <NewsLetter/>
-      <Footer/> 
-    </div>
-  )
+  render(){
+    return (
+      <div className='layoutWrapper'>
+        <Header />
+        <Hero/>
+        <About/>
+        <Gallery/>
+        <CallToAction/>
+        <Testimonials/>
+        <TutorialSection/>
+        <NewsLetter/>
+        <Footer/> 
+      </div>
+    )
+  }
 }
 
 Layout.propTypes = {
