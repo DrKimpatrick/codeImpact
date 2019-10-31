@@ -8,14 +8,14 @@ const New = () => (
             <div className="overlay">
                 <h2>Data structures</h2>
                 <p>Learn and master JavaScript programming in 10 days</p>
-                <a class="info" href="#">Play</a>
+                <a className="info" href="#">Play</a>
             </div>
         </div>
     </div>
 )
 
 const TutPeriodOne = () => (
-    <div class="row text-center text-lg-left">
+    <div className="row text-center text-lg-left">
         <New/>
         <New/>
         <New/>
@@ -25,7 +25,7 @@ const TutPeriodOne = () => (
 )
 
 const TutPeriodTwo = () => (
-    <div class="row text-center text-lg-left">
+    <div className="row text-center text-lg-left">
         <New/>
         <New/>
     </div>
@@ -58,7 +58,7 @@ class TutorialSection extends React.Component {
                         </div>
                     </div>
                 </div>
-                <hr class="mt-2 mb-5"/>
+                <hr className="mt-2 mb-5"/>
                 {(
                 () => {
                 switch(this.state.tabId) {

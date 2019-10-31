@@ -1,13 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import './newsletter.scss';
 import { toast } from 'react-toastify';
-import {
-    Stitch,
-    RemoteMongoClient
-  } from "mongodb-stitch-browser-sdk";
 
 toast.configure({
-  autoClose: 9000,
+  autoClose: 8000,
   draggable: false,
 })
 class NewsLetter extends React.Component {
@@ -17,19 +14,34 @@ class NewsLetter extends React.Component {
         error: '',
         loading: false,
     }
-    componentDidMount() {
-        // Initialize the App Client
-        this.client = Stitch.initializeDefaultAppClient("codeimpact-efvqy");
-        // Get a MongoDB Service Client
-        // This is used for logging in and communicating with Stitch
-        const mongodb = this.client.getServiceClient(
-          RemoteMongoClient.factory,
-          "mongodb-atlas"
-        );
-        // Get a reference to the todo database
-        this.db = mongodb.db("codeimpact");
-      }
-      notify = () => toast.success("You have sucessfully subscribed to codeimpact newsletter");
+
+    baseUrl = 'https://codeimpact-api.herokuapp.com';
+
+    saveSubScriber = (email) => {
+      return new Promise((resolve, reject) => {
+          axios
+              .post(
+                  `${this.baseUrl}/subscribe`,
+                  JSON.stringify({
+                      email,
+                  }),
+                  {
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                  },
+              )
+              .then((response) => {
+                  resolve(response);
+              })
+              .catch((error) => {
+                  reject(error);
+              });
+      });
+  };
+    
+      notifySuccess = (msg) => toast.success(msg);
+      notifyInfo = (msg) => toast.info(msg);
 
       addSubscriber = (event) => {
         event.preventDefault();
@@ -45,17 +57,19 @@ class NewsLetter extends React.Component {
         }
         this.setState({ loading: true });
         // insert the subscriber into the remote Stitch DB
-        this.db
-          .collection("subscribers")
-          .insertOne({
-            email
-          })
-          .then(() => {
-            this.setState({ loading: false });
-            this.notify();
-            this.setState({ email: '', error: '' });
-          })
-          .catch(console.error);
+
+        this.saveSubScriber(email).then((res) => {
+          console.log(res)
+          const { status, message, error } = res.data;
+          if(status == -1){
+            this.notifyInfo("You already subscribed to our news letter");
+          } else {
+            this.notifySuccess(message);
+          }
+          this.setState({ loading: false });
+          this.setState({ email: '', error: '' });
+          
+        }).catch((err)=> { console.log(err)})
       }
 
       handleChange = (event) => {
