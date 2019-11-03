@@ -17,15 +17,9 @@ class CallToAction extends React.Component {
 
         const registerButton = document.getElementById('register-button');
 
-        // const applyButton = document.getElementById('apply-button');
-
         registerButton.addEventListener('click', () => {
             modal.style.display = "block";
         })
-
-        // applyButton.addEventListener('click', () => {
-        //     modal.style.display = "block";
-        // })
 
     }
     render(){
@@ -38,7 +32,7 @@ class CallToAction extends React.Component {
                 </div>
                 <div id="registerModal" className="modal modalRegister">
                     <span className="closeRegister">&times;</span>
-                    <div className='modal-content'>
+                    <div className='modal-content modal-content-register'>
                         <Forms/>
                     </div>
                 </div>

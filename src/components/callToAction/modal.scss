@@ -13,7 +13,7 @@
 }
 
 /* Modal Content (Image) */
-.modal-content {
+.modal-content-register {
   margin: auto;
   padding-top: 50px;
   display: block;
@@ -50,7 +50,7 @@
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
-  .modal-content {
+  .modal-content-register {
     width: 100%;
   }
 }

@@ -65,7 +65,14 @@ class Header extends React.Component {
             smooth={true}
             offset={-100}
             duration= {500}>TUTORIALS</Link>
-            <button className='blue-button'>Apply now</button>
+            <Link
+            className="blue-button"
+            to="apply"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration= {500}>Apply now</Link>
+            {/* <button className='blue-button'>Apply now</button> */}
             </div>
       </div>
     )
