@@ -16,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.5",
+    "glyphicons": "^0.2.0",
     "mongodb-stitch-browser-sdk": "^4.6.0",
     "node-sass": "^4.12.0",
     "nyc": "^14.1.1",
