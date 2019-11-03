@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
-import CallToAction from './callToAction';
+import CallToAction from './callToAction/callToAction';
 import Testimonials from './testimonials/layout'
 import NewsLetter from './newsletter';
 import "./layout.scss"
