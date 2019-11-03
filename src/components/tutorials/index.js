@@ -1,33 +1,27 @@
 import React from 'react';
 import './index.scss';
-
-const New = () => (
-    <div className="col-lg-3 col-md-4 col-12 height">
-        <div className="d-block mb-4 h-100 hovereffect">
-            <img className='img'/>
-            <div className="overlay">
-                <h2>Data structures</h2>
-                <p>Learn and master JavaScript programming in 10 days</p>
-                <a className="info" href="#">Play</a>
-            </div>
-        </div>
-    </div>
-)
+import './modal.scss';
+import tutorialData from './tutorialData';
 
 const TutPeriodOne = () => (
-    <div className="row text-center text-lg-left">
-        <New/>
-        <New/>
-        <New/>
-        <New/>
-        <New/>
-    </div>
-)
-
-const TutPeriodTwo = () => (
-    <div className="row text-center text-lg-left">
-        <New/>
-        <New/>
+    <div className="row text-center text-lg-left videos">
+    {
+        tutorialData.map((item, index) => {
+            return (
+                <div className="col-lg-3 col-md-4 col-12 height" key={index}>
+                    <div className="d-block mb-4 h-100 hovereffect">
+                        <img className='img'/>
+                        <div className="overlay">
+                            <h2>{item.heading}</h2>
+                            <p>{item.paragraph}</p>
+                            <span className="info" id={index.toString()} >Play</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
+    }
+        
     </div>
 )
 
@@ -35,6 +29,36 @@ const TutPeriodTwo = () => (
 class TutorialSection extends React.Component {
     state = {
         tabId: 'today'
+    }
+    componentDidMount(){
+        // Get the modal
+        var modal = document.getElementById("myVideoModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeVideo")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        const videos = document.querySelectorAll('.videos span');
+
+        // add onClick on all images
+        videos.forEach(video => video.addEventListener('click', this.zoom))
+
+    }
+
+    zoom = (event) => {
+        
+        // Get the modal
+        var modal = document.getElementById("myVideoModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var span = document.getElementById(event.target.id);
+        var modalImg = document.getElementById("video-output");
+        modal.style.display = "block";
+        modalImg.src = tutorialData[span.id]["link"]
+        
     }
 
     tabClick = (tab) => {
@@ -65,14 +89,21 @@ class TutorialSection extends React.Component {
                 case 'today':
                     return <TutPeriodOne  />;
                 case 'week':
-                    return <TutPeriodTwo />;
+                    return <TutPeriodOne />;
                 case 'month':
                     return <TutPeriodOne />;
                 default:
-                    return <TutPeriodTwo/>;
+                    return <TutPeriodOne/>;
                 }
             }
             )()}
+            <div id="myVideoModal" className="modal">
+
+                    <span className="closeVideo">&times;</span>
+                
+                    <iframe className="modal-content" id="video-output"
+                    allowFullScreen></iframe>
+                </div>
             </div>
         )
     }

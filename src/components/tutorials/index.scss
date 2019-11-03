@@ -131,7 +131,8 @@ button {
   display: none;
 }
 
-.hovereffect a.info {
+.hovereffect span.info {
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   padding: 7px 14px;
@@ -151,7 +152,7 @@ button {
   padding: 40px 100px;
 }
 
-.hovereffect:hover a.info {
+.hovereffect:hover span.info {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
@@ -159,7 +160,7 @@ button {
   transform: scale(1);
 }
 
-.hovereffect a.info:hover {
+.hovereffect span.info:hover {
   box-shadow: 0 0 5px #fff;
 }
 .height {

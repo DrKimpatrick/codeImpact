@@ -35,7 +35,7 @@ class Layout extends React.Component {
         <Testimonials/>
         <TutorialSection/>
         <NewsLetter/>
-        <Footer/> 
+        <Footer/>
       </div>
     )
   }
