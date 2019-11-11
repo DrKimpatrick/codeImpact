@@ -1,6 +1,7 @@
 import React from 'react';
 import './form.scss';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 toast.configure({
     autoClose: 8000,
@@ -25,6 +26,8 @@ class Register extends React.Component {
         locationError: ""
     }
 
+    baseUrl = 'https://codeimpact-api.herokuapp.com';
+
     phoneValidator = (phoneNumber) => {
         const mtnRegex = /^078|^077|^070|^079|^075/;
         if(mtnRegex.test(phoneNumber)){
@@ -34,28 +37,51 @@ class Register extends React.Component {
     handleChange = (event) => {
         this.setState({ [event.target.id]: event.target.value });
         const value = event.target.value;
-        if(event.target.id == 'firstName'){
-            if(value.length < 3){
-                this.setState({ firstNameError: "Invalid name" });
-            }else {
-                this.setState({ firstNameError: "" });
-            }
-        } else if(event.target.id == 'lastName'){
-            if(value.length < 3){
+        if(event.target.id === 'firstName'){
+           this.validateFirstName(value);
+        } else if(event.target.id === 'lastName'){
+            this.validateLastName(value);
+        } else if(event.target.id === 'email') {
+            this.validateEmail(value);
+        } else if(event.target.id === 'phoneNumber'){
+            this.validatePhoneNumber(value);
+        } else if(event.target.id === 'location'){
+            this.validateLocation(value);
+        }
+      }
+
+      isChecked = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+      }
+
+      validateFirstName = (firstName) => {
+        if(firstName.length < 3){
+            this.setState({ firstNameError: "Invalid name" });
+        }else {
+            this.setState({ firstNameError: "" });
+        }
+      }
+
+      validateLastName = (lastName) => {
+            if(lastName.length < 3){
                 this.setState({ lastNameError: "Invalid name" });
             }else {
                 this.setState({ lastNameError: "" });
             }
-        } else if(event.target.id == 'email') {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        }
+
+    validateEmail = (email) => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         
-            if(!re.test(String(value).toLowerCase())){
-                this.setState({ emailError :"Invalid Email" });
-            }else {
-                this.setState({ emailError :"" });
-            }
-        } else if(event.target.id == 'phoneNumber'){
-            const allRegex = /^078|^077|^075|^079|^070/;
+        if(!re.test(String(email).toLowerCase())){
+            this.setState({ emailError :"Invalid Email" });
+        }else {
+            this.setState({ emailError :"" });
+        } 
+    }
+
+    validatePhoneNumber = (value) => {
+        const allRegex = /^078|^077|^075|^079|^070/;
             const re = /^[0-9]*$/
             console.log(value.length, '----lenght----');
             if (value.length !== 10 || !allRegex.test(value) || !re.test(value)) { //  || 
@@ -63,21 +89,88 @@ class Register extends React.Component {
             }else {
                 this.setState({ phoneNumberError: "" });
             }
-        } else if(event.target.id == 'location'){
-            if(value.length < 3){
-                this.setState({ locationError: "Please choose a location" });
-            }else {
-                this.setState({ locationError: "" });
-            }
+    }
+    validateAge = (value) => {
+       if(!value){
+           this.setState({ageError: "Please select age"})
+       } else {
+        this.setState({ageError: ""})
+       }
+    }
+    validateGender = (value) => {
+        if(!value){
+            this.setState({genderError: "Please select gender"})
+        } else {
+            this.setState({genderError: ""})
+        } 
+    }
+    validateLocation = (value) => {
+        if(value.length < 3){
+            this.setState({ locationError: "Please choose a location" });
+        }else {
+            this.setState({ locationError: "" });
         }
+    }
+      validateAll = () => {
+        const { firstName, lastName, email, age, gender, location, phoneNumber } = this.state;
+        
+        this.validateFirstName(firstName);
+        this.validateLastName(lastName);
+        this.validateEmail(email);
+        this.validatePhoneNumber(phoneNumber);
+        this.validateLocation(location);
+        this.validateAge(age);
+        this.validateGender(gender);
       }
+      notifySuccess = (msg) => toast.success(msg);
+      notifyInfo = (msg) => toast.info(msg);
+      notifyError = (msg) => toast.error(msg);
+    
+      handleSubmit = (evt) => {
+          evt.preventDefault();
+        this.validateAll();
+        const { firstNameError, lastNameError, emailError, ageError, genderError, locationError, phoneNumberError } = this.state;
+        if(firstNameError || lastNameError || emailError || ageError || genderError || locationError || phoneNumberError){
+            return;
+        }else{
+            this.registerUser();
+        }
+    }
 
-      isChecked = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-      }
+    registerUser = () => {
+        this.props.closeSpan();
+        const { firstName, lastName, email, phoneNumber, location, age, gender, comment } = this.state;
+        return new Promise((resolve, reject) => {
+            axios
+                .post(
+                    `${this.baseUrl}/register`,
+                    JSON.stringify({
+                        firstName, lastName, email, phoneNumber, location, age, gender, comment
+                    }),
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    },
+                )
+                .then((res) => {
+                    const { status, message, error } = res.data;
+                    if(status == -1){
+                        this.notifyInfo("You already registered for coding classes");
+                    } else {
+                        this.notifySuccess(message);
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                    reject(error);
+                });
+        });
+    };
+
     render(){
         return(  
-            <div className="container register-form">
+            <form className="container register-form" onSubmit={this.handleSubmit}>
             <div className="form">
                 <div className="note">
                     <p>Register for CodeImpact Classes</p>
@@ -149,10 +242,10 @@ class Register extends React.Component {
                         
                         
                     </div>
-                    <button type="button" className="btnSubmit">Submit</button>
+                    <button type="submit" className="btnSubmit">Submit</button>
                 </div>
             </div>
-        </div>
+        </form>
         )
     }
 }

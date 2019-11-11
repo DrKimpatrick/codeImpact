@@ -4,6 +4,9 @@ import './modal.scss';
 import Forms from './forms';
 
 class CallToAction extends React.Component {
+    state = {
+        closeSpan: ""
+    }
     componentDidMount(){
         // Get the modal
         var modal = document.getElementById("registerModal");
@@ -15,6 +18,8 @@ class CallToAction extends React.Component {
             modal.style.display = "none";
         }
 
+        this.setState({closeSpan: span});
+        console.log(this.state);
         const registerButton = document.getElementById('register-button');
 
         registerButton.addEventListener('click', () => {
@@ -22,6 +27,11 @@ class CallToAction extends React.Component {
         })
 
     }
+
+    closeButton = () => { 
+        this.state.closeSpan.click();
+    }
+
     render(){
         return(
             <div className='actionWrapper' id='apply'>
@@ -33,7 +43,7 @@ class CallToAction extends React.Component {
                 <div id="registerModal" className="modal modalRegister">
                     <span className="closeRegister">&times;</span>
                     <div className='modal-content modal-content-register'>
-                        <Forms/>
+                        <Forms closeSpan={this.closeButton}/>
                     </div>
                 </div>
             </div>
