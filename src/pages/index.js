@@ -8,6 +8,7 @@ import About from '../components/aboutUs/index';
 import TutorialSection from '../components/tutorials/index';
 import Hero from '../components/hero/hero';
 import Gallery from '../components/gallery/gallery';
+import TeamSection from '../components/teamSection/team';
 
 const IndexPage = () => (
   <Layout>
@@ -17,6 +18,7 @@ const IndexPage = () => (
         <CallToAction/>
         <Testimonials/>
         <TutorialSection/>
+        <TeamSection/>
         <NewsLetter/>
   </Layout>
 

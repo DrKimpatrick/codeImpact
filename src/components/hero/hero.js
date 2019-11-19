@@ -12,7 +12,7 @@ const Hero = () => (
                         <p>Real-world projects from industry experts</p>
                         <p>1-on-1 technical mentor</p>
                         <p>Personal career coach and career services</p>
-                        <button className='my-auto'>Login</button>
+                        <button className='my-auto'>Register for classes</button>
                     </div>
                 </div>
             </div>
