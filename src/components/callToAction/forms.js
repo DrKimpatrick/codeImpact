@@ -28,13 +28,14 @@ class Register extends React.Component {
 
     baseUrl = 'https://codeimpact-api.herokuapp.com';
 
-    phoneValidator = (phoneNumber) => {
-        const mtnRegex = /^078|^077|^070|^079|^075/;
-        if(mtnRegex.test(phoneNumber)){
-
-        }
+    setStateAsync(state) {
+        return new Promise((resolve) => {
+          this.setState(state, resolve)
+        });
     }
-    handleChange = (event) => {
+
+    handleChange = async (event) => {
+        // await this.setStateAsync({ [event.target.id]: event.target.value });
         this.setState({ [event.target.id]: event.target.value });
         const value = event.target.value;
         if(event.target.id === 'firstName'){
@@ -50,102 +51,113 @@ class Register extends React.Component {
         }
       }
 
-    isChecked = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    isChecked = async (event) => {
+    // this.setState({ [event.target.name]: event.target.value });
+    await this.setStateAsync({ [event.target.name]: event.target.value });
     }
 
-    validateFirstName = (firstName) => {
+    validateFirstName = async (firstName) => {
     if(firstName.length < 3){
-        this.setState({ firstNameError: "Invalid name" });
+        // this.setState({ firstNameError: "Invalid name" });
+        await this.setStateAsync({ firstNameError: "Invalid name" });
     }else {
-        this.setState({ firstNameError: "" });
+        // this.setState({ firstNameError: "" });
+        await this.setStateAsync({ firstNameError: "" });
     }
     }
 
-    validateLastName = (lastName) => {
+    validateLastName = async (lastName) => {
         if(lastName.length < 3){
-            this.setState({ lastNameError: "Invalid name" });
+            // this.setState({ lastNameError: "Invalid name" });
+            await this.setStateAsync({ lastNameError: "Invalid name" });
         }else {
-            this.setState({ lastNameError: "" });
+            // this.setState({ lastNameError: "" });
+            await this.setStateAsync({ lastNameError: "" });
         }
     }
 
-    validateEmail = (email) => {
+    validateEmail = async (email) => {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         
         if(!re.test(String(email).toLowerCase())){
-            this.setState({ emailError :"Invalid Email" });
-            console.log('email---invalid---');
+            // this.setState({ emailError :"Invalid Email" });
+            await this.setStateAsync({ emailError: "Invalid Email" });
         }else {
-            this.setState({ emailError :"" });
+            // this.setState({ emailError :"" });
+            await this.setStateAsync({ emailError: "" });
         } 
     }
 
-    validatePhoneNumber = (value) => {
+    validatePhoneNumber = async (value) => {
         const allRegex = /^078|^077|^075|^079|^070/;
-            const re = /^[0-9]*$/
-            console.log(value.length, '----lenght----');
+            const re = /^[0-9]*$/;
             if (value.length !== 10 || !allRegex.test(value) || !re.test(value)) { //  || 
-                this.setState({ phoneNumberError: "valid format 07***" });
+                // this.setState({ phoneNumberError: "valid format 07***" });
+                await this.setStateAsync({ phoneNumberError: "valid format 07***"  });
             }else {
-                this.setState({ phoneNumberError: "" });
+                // this.setState({ phoneNumberError: "" });
+                await this.setStateAsync({ phoneNumberError: "" });
             }
     }
-    validateAge = (value) => {
+    validateAge = async (value) => {
        if(!value){
-           this.setState({ageError: "Please select age"})
+        //    this.setState({ageError: "Please select age"})
+        await this.setStateAsync({ ageError: "Please select age" });
        } else {
-        this.setState({ageError: ""})
+        // this.setState({ageError: ""})
+        await this.setStateAsync({ ageError: "" });
        }
     }
-    validateGender = (value) => {
+    validateGender = async (value) => {
         if(!value){
-            this.setState({genderError: "Please select gender"})
+            // this.setState({genderError: "Please select gender"})
+            await this.setStateAsync({ genderError: "Please select gender" });
         } else {
-            this.setState({genderError: ""})
+            // this.setState({genderError: ""})
+            await this.setStateAsync({ genderError: "" });
         } 
     }
-    validateLocation = (value) => {
+    validateLocation = async (value) => {
         if(value.length < 3){
-            this.setState({ locationError: "Please choose a location" });
+            // this.setState({ locationError: "Please choose a location" });
+            await this.setStateAsync({ locationError: "Please choose a location" });
         }else {
-            this.setState({ locationError: "" });
+            // this.setState({ locationError: "" });
+            await this.setStateAsync({ locationError: "" });
         }
     }
     validateAll = () => {
-    const { firstName, lastName, email, age, gender, location, phoneNumber } = this.state;
-    console.log('----validate--all---');
-    this.validateFirstName(firstName);
-    this.validateLastName(lastName);
-    this.validateEmail(email);
-    this.validatePhoneNumber(phoneNumber);
-    this.validateLocation(location);
-    this.validateAge(age);
-    this.validateGender(gender);
+        return new Promise((resolve) => {
+            const { firstName, lastName, email, age, gender, location, phoneNumber } = this.state;
+
+            this.validateFirstName(firstName);
+            this.validateLastName(lastName);
+            this.validateEmail(email);
+            this.validatePhoneNumber(phoneNumber);
+            this.validateLocation(location);
+            this.validateAge(age);
+            this.validateGender(gender);
+            resolve({});
+        })
+    
     }
     notifySuccess = (msg) => toast.success(msg);
     notifyInfo = (msg) => toast.info(msg);
     notifyError = (msg) => toast.error(msg);
-    newState = {};
-    componentDidUpdate(){
-        this.newState = this.state;
-        console.log(this.newState, '----new--state--com')
-    }
 
     handleSubmit = (evt) => {
         evt.preventDefault();
-        this.validateAll();
-        console.log(this.state, '------this.state----');
-        this.componentDidUpdate();
-        console.log(this.newState, '----new-state--', this.state, '----state----');
-        const { firstNameError, lastNameError, emailError, ageError, genderError, locationError, phoneNumberError } = this.newState;
-            if(firstNameError || lastNameError || emailError || ageError || genderError || locationError || phoneNumberError){
-                console.log('-----inside----error---log---')
-                return;
-            }else{
-                this.registerUser();
-                this.resetState();
-            }
+        this.validateAll().then(()=>{
+        
+            const { firstNameError, lastNameError, emailError, ageError, genderError, locationError, phoneNumberError } = this.state;
+                if(firstNameError || lastNameError || emailError || ageError || genderError || locationError || phoneNumberError){
+                    return;
+                }else{
+                    this.registerUser();
+                    this.resetState();
+                }
+        }).catch();
+        
         
     }
     resetState = () => {

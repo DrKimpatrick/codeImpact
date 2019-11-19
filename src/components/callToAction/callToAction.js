@@ -12,7 +12,7 @@ class CallToAction extends React.Component {
         var modal = document.getElementById("registerModal");
 
         // Get the <span> element that closes the modal
-        var span = document.querySelectorAll(".closeRegister")[0];
+        var span = document.querySelectorAll(".closeRegister")[1];
 
         span.onclick = function() {
             modal.style.display = "none";

@@ -60,18 +60,18 @@ class Header extends React.Component {
             duration= {500}>TESTMONIALS</Link>
             <Link 
             activeClass="active-class"
-            to="team"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration= {500}>TEAM</Link>
-            <Link 
-            activeClass="active-class"
             to="tutorials"
             spy={true}
             smooth={true}
             offset={-100}
             duration= {500}>TUTORIALS</Link>
+            <Link 
+            activeClass="active-class"
+            to="team"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration= {500}>TEAM</Link>
             {/* <Link
             className="blue-button"
             to="apply"
