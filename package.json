@@ -18,7 +18,7 @@
     "gatsby-transformer-sharp": "^2.2.5",
     "glyphicons": "^0.2.0",
     "mongodb-stitch-browser-sdk": "^4.6.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nyc": "^14.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
